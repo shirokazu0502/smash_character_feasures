@@ -1,0 +1,2 @@
+# smash_character_feasures
+スマブラのキャラごとの対策やコンボなどの特徴を記述できるサイト
