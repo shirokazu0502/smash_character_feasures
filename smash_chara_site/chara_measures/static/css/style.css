@@ -1,8 +1,7 @@
 /*------------------------------------
 - COLOR primary
 ------------------------------------*/
-
-
+ 
 .alert-primary {
     color: #450000;
     background-color: #fe8e8d;
@@ -210,4 +209,4 @@ main {
 
 .form-control:focus {
     box-shadow: none;
-}
+} 

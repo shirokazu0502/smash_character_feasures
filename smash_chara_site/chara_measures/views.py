@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from .forms import SignupForm, LoginForm
 from django.contrib.auth import login
 from requests import post
 from django.contrib.auth.models import User

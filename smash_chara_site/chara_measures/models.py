@@ -1,12 +1,14 @@
-# from django.db import models
-# from django.conf import settings
-# from django.utils import timezone
-# from django.contrib.auth.models import User
+import django
+from django.db import models
+from django.conf import settings
+from django.utils import timezone
+from accounts.models import AccountUser
+# Create your models here.
 
-# class AccountUser(models.Model):
-#     user_name = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
-#     profile = models.TextField("自己紹介")
-#     # user_name = models.OneToOneField(User, on_delete=models.CASCADE)
+class Post(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    title = models.CharField("タイトル", max_length=200)
+    content = models.TextField("本文")
 
-#     def __str__(self):
-#         return str(self.user_name)
+    def __str__(self):
+        return self.title    
