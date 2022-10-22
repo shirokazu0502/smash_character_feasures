@@ -2,12 +2,10 @@ from django.urls import path
 from accounts import views
 
 urlpatterns = [
-    path('login/', views.LoginView.as_view(), name='account_login'),
-    path('logout/', views.LogoutView.as_view(), name='account_logout'),
-    path('signup/', views.SignupView.as_view(), name='account_signup'),
-    path('mypage/<int:pk>/',views.MypageView.as_view(), name='account_mypage'),
-    path('mypage/edit', views.ProfileUpdateView.as_view(), name='edit_page'),
-    path('userpage/<int:pk>/', views.userpage, name='account_userpage'),
-    path('profile/<int:pk>',views.ProfileView.as_view(), name='account_profile'),
-    path('plan/<int:pk>/',views.PlanView.as_view(), name='account_plan'),
+    path('login/', views.MyLoginView.as_view(), name='login'),
+    path('logout/', views.MyLogoutView.as_view(), name='logout'),
+    path('signup/', views.MySignupView.as_view(), name='signup'),
+    path('mypage/<int:pk>/', views.MyPageView.as_view(), name='mypage'),
+    path('chara_measure/<int:chara_id>/', views.CharaMeasuresView.as_view(), name='chara_measure'),
+    path('chara_measure/<int:chara_id>/measure_form/', views.FormView.as_view(), name='measure_form'),
 ]
