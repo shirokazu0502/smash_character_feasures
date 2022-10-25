@@ -39,6 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'chara_measures',
     'accounts',
+    'widget_tweaks',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -118,6 +123,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
+SITE_ID = 1
+ACCOUNT_EMAIL_REQUIRED = False
 LOGIN_URL = '/' 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL='/'

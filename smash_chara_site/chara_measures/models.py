@@ -7,6 +7,7 @@ from accounts.models import AccountUser
 
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    chara_id = models.IntegerField("キャラクターid")
     title = models.CharField("タイトル", max_length=200)
     content = models.TextField("本文")
 

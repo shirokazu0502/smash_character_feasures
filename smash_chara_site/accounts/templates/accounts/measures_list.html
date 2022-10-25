@@ -1,15 +1,17 @@
 {% extends "chara_measures/base.html" %}
 {% block content %}
     <div class="container">
-        {% for post in object_list %}
+        {% for measure in measure_datas %}
         <div class="post">
-            <p>タイトル：{{ post.title }}</p>
-            <p>メモ：{{ post.memo }}</p>
+            <p>タイトル：{{ measure.title }}</p>
+            <p>メモ：{{ measure.content }}</p>
+            <a href="{% url 'measure_edit' measure.id %}" class="btn btn-warning mr-2">編集する</a>
+            <a href="{% url 'measure_delete' measure.id %}" class="btn btn-danger">削除する</a>
             <p>--------------------</p>
         </div>
         {% endfor %}
         <div class="form">
-            <a href="{% url 'measure_form' 1 %}">新規投稿</a>
+            <a href="{% url 'measure_form' user.pk chara_id %}">新規投稿</a>
         </div>
     </div>
 {% endblock %}
